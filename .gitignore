@@ -1,3 +1,4 @@
 .idea/
-logs/*.log
+*.log
 __pycharm__/
+migrations/

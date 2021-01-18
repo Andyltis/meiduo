@@ -201,3 +201,9 @@ REST_FRAMEWORK = {
 
 # 修改django认证系统的模型类
 AUTH_USER_MODEL = 'users.User'
+
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+EMAIL_HOST = 'smtp.sina.com'
+EMAIL_PORT = 25
+EMAIL_HOST_USER = 'luoxu_ch@sina.com'
+EMAIL_HOST_PASSWORD = 'dcfd7378c8c01022'

@@ -26,7 +26,7 @@ SECRET_KEY = 'v((s+hacxqmarb7p0%ne=9$abimtgrrwd^r&car%1vogq#aqcy'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['127.0.0.1', 'localhost', 'www.meiduo.site', 'api.meiduo.site']
 
 # Application definition
 
@@ -40,9 +40,11 @@ INSTALLED_APPS = [
 
     'rest_framework',  # DRF
     'users.apps.UsersConfig',
+    'corsheaders',  # cors
 ]
 
 MIDDLEWARE = [
+    'corsheaders.middleware.CorsMiddleware',  # 最外层的中间件， 先执行
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
@@ -207,3 +209,11 @@ EMAIL_HOST = 'smtp.sina.com'
 EMAIL_PORT = 25
 EMAIL_HOST_USER = 'luoxu_ch@sina.com'
 EMAIL_HOST_PASSWORD = 'dcfd7378c8c01022'
+
+CORS_ORIGIN_WHITELIST = (
+    'http://127.0.0.1:8080',
+    'http://localhost:8080',
+    'http://www.meiduo.site:8080',
+    'http://api.meiduo.site:8000',
+)
+CORS_ALLOW_CREDENTIALS = True

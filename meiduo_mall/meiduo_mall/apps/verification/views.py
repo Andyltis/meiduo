@@ -44,7 +44,7 @@ class SMSCodeView(APIView):
         # send_email("22814852@qq.com", "验证码： {}".format(sms_code))
 
         # 触发异步任务， 将异步任务添加到celery任务队列, 必须使用delay
-        send_sms_code.delay(sms_code=sms_code)
+        # send_sms_code.delay(sms_code=sms_code)
         # 6.响应
         return Response({"message": "ok"})
         pass
